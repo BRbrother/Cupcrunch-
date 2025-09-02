@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Coffee Cup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf6f0;
+      text-align: center;
+      padding: 50px;
+    }
+    h2 {
+      color: chocolate;
+    }
+    select, button {
+      font-size: 1rem;
+      padding: 10px;
+      margin: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: chocolate;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Order Coffee Cup</h2>
+  <p>Select quantity and confirm your order:</p>
+
+  <select id="quantity">
+    <option value="1 - ₹10">1 - ₹10</option>
+    <option value="5 - ₹99">5 - ₹99</option>
+    <option value="6 - ₹110">6 - ₹110</option>
+    <option value="10 - ₹199">10 - ₹199</option>
+    <option value="12 - ₹249">12 - ₹249</option>
+  </select>
+  <br>
+  <button onclick="sendOrder()">Confirm Order</button>
+
+  <script>
+    function sendOrder() {
+      let qty = document.getElementById("quantity").value;
+      let product = "Coffee Cup";
+      // 👇 apna WhatsApp number yaha daalna
+      let phone = "91XXXXXXXXXX";
+      let url = "https://wa.me/" + phone + "?text=I%20want%20to%20order%20" + qty + "%20" + product;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
