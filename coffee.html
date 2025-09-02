@@ -5,50 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Coffee Cup</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fdf6f0;
-      text-align: center;
-      padding: 50px;
-    }
-    h2 {
-      color: chocolate;
-    }
-    select, button {
-      font-size: 1rem;
-      padding: 10px;
-      margin: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: chocolate;
-      color: white;
-      cursor: pointer;
-    }
+    body { font-family: Arial, sans-serif; background: #fdf6f0; text-align: center; padding: 30px; }
+    h2 { color: chocolate; }
+    select, input, textarea, button { font-size: 1rem; padding: 10px; margin: 10px; border-radius: 5px; border: 1px solid #ccc; width: 80%; max-width: 400px; }
+    button { background: chocolate; color: white; cursor: pointer; border: none; }
   </style>
 </head>
 <body>
   <h2>Order Coffee Cup</h2>
-  <p>Select quantity and confirm your order:</p>
+  <p>Select quantity and enter your details:</p>
 
+  <label>Quantity:</label>
   <select id="quantity">
     <option value="1 - ₹10">1 - ₹10</option>
     <option value="5 - ₹99">5 - ₹99</option>
     <option value="6 - ₹110">6 - ₹110</option>
     <option value="10 - ₹199">10 - ₹199</option>
     <option value="12 - ₹249">12 - ₹249</option>
-  </select>
-  <br>
-  <button onclick="sendOrder()">Confirm Order</button>
+  </select><br>
+
+  <input type="text" id="name" placeholder="Your Name" required><br>
+  <input type="text" id="contact" placeholder="Your Contact Number" required><br>
+  <textarea id="address" placeholder="Delivery Address" required></textarea><br>
+  <input type="url" id="map" placeholder="Paste Google Maps Link"><br>
+
+  <button onclick="sendOrder()">Confirm Order on WhatsApp</button>
 
   <script>
     function sendOrder() {
       let qty = document.getElementById("quantity").value;
+      let name = document.getElementById("name").value;
+      let contact = document.getElementById("contact").value;
+      let address = document.getElementById("address").value;
+      let map = document.getElementById("map").value;
+
+      if (!name || !contact || !address) {
+        alert("⚠️ Please fill all details before ordering!");
+        return;
+      }
+
       let product = "Coffee Cup";
-      // 👇 apna WhatsApp number yaha daalna
-      let phone = "919256259598";
-      let url = "https://wa.me/" + phone + "?text=I%20want%20to%20order%20" + qty + "%20" + product;
+      let phone = "919256259598"; // Apna WhatsApp number daalo
+      let message = "🛒 New Order:%0A"
+        + "Product: " + product + "%0A"
+        + "Quantity: " + qty + "%0A"
+        + "Name: " + name + "%0A"
+        + "Contact: " + contact + "%0A"
+        + "Address: " + address + "%0A"
+        + (map ? "Map: " + map + "%0A" : "")
+        + "⚠️ Delivery charges will be confirmed based on location.";
+
+      let url = "https://wa.me/" + phone + "?text=" + message;
       window.open(url, "_blank");
     }
   </script>
