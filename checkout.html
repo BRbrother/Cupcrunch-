@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CupCrunch Checkout</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff8f5; padding: 20px; }
+    h1 { color: #4e2c0a; }
+    form { background: #fff; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; }
+    label { display: block; margin: 10px 0 5px; }
+    input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #4e2c0a; color: #fff; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    button:hover { background: #6a3f16; }
+  </style>
+</head>
+<body>
+  <h1>Checkout - CupCrunch</h1>
+  <form id="orderForm">
+    <label for="product">Select Product:</label>
+    <select id="product" name="product" required>
+      <option value="Chocolate Cup - ₹99">Chocolate Cup - ₹99</option>
+      <option value="Coffee Cup - ₹110">Coffee Cup - ₹110</option>
+      <option value="Rose Cup - ₹199">Rose Cup - ₹199</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <select id="quantity" name="quantity" required>
+      <option value="1">1</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="12">12</option>
+    </select>
+
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Contact Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="address">Delivery Address:</label>
+    <textarea id="address" name="address" rows="4" required></textarea>
+
+    <button type="submit">Place Order via WhatsApp</button>
+  </form>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let product = document.getElementById("product").value;
+      let quantity = document.getElementById("quantity").value;
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let address = document.getElementById("address").value;
+
+      let message = `🛒 New Order from CupCrunch%0A
+      Product: ${product}%0A
+      Quantity: ${quantity}%0A
+      Name: ${name}%0A
+      Phone: ${phone}%0A
+      Address: ${address}`;
+
+      let whatsapp = `https://wa.me/919256259598?text=${message}`;
+      window.open(whatsapp, "_blank");
+    });
+  </script>
+</body>
+</html>
