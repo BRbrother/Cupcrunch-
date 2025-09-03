@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CupCrunch - Royal Sip, Crunchy Bite, Zero Waste Delight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Fonts */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { line-height: 1.6; color: #333; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Colors */
+    :root {
+      --rose-pink: #ff7f9c;
+      --brown: #5a3e36;
+      --gold: #f5c518;
+      --bg-light: #fff8f6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      background-color: var(--bg-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img { width: 120px; }
+    nav a { margin: 0 10px; font-weight: 600; color: var(--brown); }
+    .cta-btn { padding: 10px 20px; background-color: var(--gold); color: #fff; border-radius: 5px; font-weight: 700; }
+    .cta-btn:hover { opacity: 0.9; }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1617196038640-6c6cb5f92c34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc5OTZ8MHwxfGFsbHwxfHxjdXAlMjBhbmQlMjBjb2ZmZWV8ZW58MHx8fHwxNjk0NDA5Mjcw&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero button {
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .primary-btn { background-color: var(--gold); color: #fff; }
+    .secondary-btn { background-color: var(--rose-pink); color: #fff; }
+    .hero button:hover { opacity: 0.9; }
+
+    /* Product Showcase */
+    .products { padding: 50px 5%; background-color: var(--bg-light); }
+    .products h2 { text-align: center; margin-bottom: 40px; color: var(--brown); }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card img { width: 100%; height: 200px; object-fit: cover; }
+    .product-card h3 { margin: 15px 0 5px; color: var(--brown); }
+    .product-card p { color: var(--rose-pink); font-weight: 600; margin-bottom: 10px; }
+    .product-card button { background-color: var(--gold); color: #fff; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: 600; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+
+    /* Brand Story */
+    .brand-story { padding: 50px 5%; text-align: center; }
+    .brand-story h2 { color: var(--brown); margin-bottom: 30px; }
+    .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .feature {
+      width: 200px;
+      text-align: center;
+    }
+    .feature img { width: 60px; margin-bottom: 15px; }
+    .feature p { font-weight: 600; color: var(--rose-pink); }
+
+    /* Testimonials */
+    .testimonials { padding: 50px 5%; background-color: #fff; text-align: center; }
+    .testimonials h2 { color: var(--brown); margin-bottom: 40px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .testimonial-card {
+      background-color: var(--bg-light);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .testimonial-card img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px; }
+    .testimonial-card h4 { color: var(--brown); margin-bottom: 5px; }
+    .testimonial-card p { font-style: italic; color: #555; }
+
+    /* Mid CTA */
+    .mid-cta {
+      background-color: var(--rose-pink);
+      color: #fff;
+      text-align: center;
+      padding: 50px 5%;
+    }
+    .mid-cta h2 { margin-bottom: 20px; font-size: 2rem; }
+    .mid-cta button { background-color: var(--gold); color: #fff; padding: 15px 25px; font-weight: 700; border: none; border-radius: 5px; cursor: pointer; }
+    .mid-cta button:hover { opacity: 0.9; }
+
+    /* Footer */
+    footer { background-color: var(--brown); color: #fff; padding: 30px 5%; text-align: center; }
+    footer a { color: var(--gold); margin: 0 5px; }
+    footer p { margin-top: 10px; font-size: 0.9rem; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .features { flex-direction: column; gap: 20px; }
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="https://i.imgur.com/0y0QH3C.png" alt="CupCrunch Logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://instagram.com"><img src="https://i.imgur.com/1NQzQhX.png" width="20" alt="Instagram"></a>
+      <a href="https://wa.me/9256259598"><img src="https://i.imgur.com/B7M9D1F.png" width="20" alt="WhatsApp"></a>
+    </nav>
+    <a href="https://wa.me/9256259598" class="cta-btn">Order Now</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Royal Sip, Crunchy Bite, Zero Waste Delight</h1>
+      <button class="primary-btn" onclick="window.location.href='https://wa.me/9256259598'">Order Your Cup Now</button>
+      <button class="secondary-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Explore Products</button>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="products" id="products">
+    <h2>Our Delicious Cups</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1603052875787-d93e19ebf75a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Chocolate Cup">
+        <h3>Chocolate</h3>
+        <p>₹120</p>
+        <button onclick="window.location.href='https://wa.me/9256259598'">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1617196038640-6c6cb5f92c34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Rose Cup">
+        <h3>Rose</h3>
+        <p>₹130</p>
+        <button onclick="window.location.href='https://wa.me/9256259598'">Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1601924582975-50f87e50d96e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Coffee Cup">
+        <h3>Coffee</h3>
+        <p>₹140</p>
+        <button onclick="window.location.href='https://wa.me/9256259598'">Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Story -->
+  <section class="brand-story" id="about">
+    <h2>Why Choose CupCrunch</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="https://i.imgur.com/Zr48L3F.png" alt="Eco-friendly">
+        <p>100% Edible & Eco-friendly</p>
+      </div>
+      <div class="feature">
+        <img src="https://i.imgur.com/3Z1PqOI.png" alt="Premium">
+        <p>Premium Ingredients</p>
+      </div>
+      <div class="feature">
+        <img src="https://i.imgur.com/L8pF2pU.png" alt="Zero Waste">
+        <p>Zero Waste Packaging</p>
+      </div>
+      <div class="feature">
+        <img src="https://i.imgur.com/9wVhXke.png" alt="Trusted">
+        <p>Trusted by Shekhawat Group</p>
+      </div>
+    </div>
+    <p style="margin-top: 30px;">CupCrunch brings you a royal sipping experience while saving the planet. Delicious cups made with love, premium ingredients, and zero waste philosophy.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <img src="https://i.imgur.com/1XQpOqg.jpg" alt="User 1">
+        <h4>Rohit Sharma</h4>
+        <p>“Best edible cups ever! Loved the chocolate flavor.”</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://i.imgur.com/BdODkTX.jpg" alt="User 2">
+        <h4>Neha Mehta</h4>
+        <p>“Rose cup is so refreshing and eco-friendly. Highly recommend!”</p>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://i.imgur.com/UgXkK8g.jpg" alt="User 3">
+        <h4>Akash Verma</h4>
+        <p>“Great taste and zero waste. Perfect for gifting!”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mid CTA -->
+  <section class="mid-cta">
+    <h2>Order Your Crunchy Delight Today!</h2>
+    <button onclick="window.location.href='https://wa.me/9256259598'">WhatsApp / Order Now</button>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Contact us: <a href="https://wa.me/9256259598">WhatsApp</a> | <a href="mailto:cupcrunch@example.com">Email</a></p>
+    <p>Follow us: <a href="https://instagram.com">Instagram</a> | <a href="https://facebook.com">Facebook</a></p>
+    <p>GST: 08TOAPS8997K1ZE</p>
+    <p>© 2025 Powered by Shekhawat Group of Companies</p>
+  </footer>
+
+</body>
+</html>
