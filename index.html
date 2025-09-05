@@ -26,6 +26,25 @@
       color: var(--text);
       line-height: 1.6;
     }
+body {
+  background-image: url('images/cupcrunch logo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 450px auto;
+  opacity: 1;
+  /* Faint effect ke liye overlay or filter use karenge */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: url('images/cupcrunch logo.png') no-repeat center center;
+  background-size: 450px auto;
+  opacity: 0.055; /* Yeh adjust karo -- 0.03 se 0.09 tak try karo */
+  pointer-events: none;
+}
     header {
       background: #fff;
       box-shadow: 0 2px 8px #0001;
