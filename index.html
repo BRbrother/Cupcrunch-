@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>CupCrunch - Edible Coffee & Dessert Cups</title>
   <meta name="description" content="CupCrunch brings you edible cups in Chocolate, Coffee & Rose flavors. Eco-friendly, tasty, and affordable. Perfect for coffee, desserts, and parties. Order now!">
@@ -39,30 +40,30 @@
       font-size: 3rem;
       color: #6a4e42;
     }
-#announcements {
-  padding: 60px 20px;
-  background: #fff3e6;
-  text-align: center;
-}
-.announcement {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  max-width: 800px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
-.announcement img {
-  width: 200px;
-  height: auto;
-}
-.announcement-text {
-  padding: 20px;
-  text-align: left;
-}
+    #announcements {
+      padding: 60px 20px;
+      background: #fff8f2;
+      text-align: center;
+    }
+    .announcement {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+      max-width: 800px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .announcement img {
+      width: 200px;
+      height: auto;
+    }
+    .announcement-text {
+      padding: 20px;
+      text-align: left;
+    }
     .btn {
       display: inline-block;
       margin-top: 20px;
@@ -99,6 +100,46 @@
       max-width: 100%;
       border-radius: 8px;
     }
+    /* Slider */
+    #gallery {
+      padding: 60px 20px;
+      background: #fff8f2;
+      text-align: center;
+      position: relative;
+    }
+    .slider {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.8);
+    }
     footer {
       background: #6a4e42;
       color: white;
@@ -118,51 +159,35 @@
       <a href="#mission">Mission</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>  <section class="hero">
+  </header>
+
+  <section class="hero">
     <h1>Royal Sip, Crunchy Bite, Zero Waste Delight</h1>
     <p>Enjoy your favorite beverage in a 100% edible, eco-friendly cup.</p>
     <div>
-<section id="announcements">
-  <h2>Announcements</h2>
-  <div class="announcement">
-    <img src="images/announcement1.jpg" alt="Announcement">
-    <div class="announcement-text">
-      <h3>Now Available on Amazon & Flipkart!</h3>
-      <p>Order CupCrunch edible cups online at your favorite platform.</p>
-    </div>
-  </div>
-
-  <div class="announcement">
-    <img src="images/announcement2.jpg" alt="New Flavor">
-    <div class="announcement-text">
-      <h3>New Flavor Coming Soon!</h3>
-      <p>Stay tuned for a surprise addition to our CupCrunch family.</p>
-    </div>
-  </div>
-</section>
+      <section id="announcements">
+        <h2>Announcements</h2>
+        <div class="announcement">
+          <img src="images/announcements 1.png" alt="Announcement">
+          <div class="announcement-text">
+            <h3>Now Available on Amazon & Flipkart!</h3>
+            <p>Order CupCrunch edible cups online at your favorite platform.</p>
+          </div>
+        </div>
+      </section>
       <a href="https://dl.flipkart.com/s/I1x9ofNNNN" target="_blank" class="btn btn-flipkart">Buy on Flipkart</a>
       <a href="https://amzn.in/d/6JChkSO" target="_blank" class="btn btn-amazon">Buy on Amazon</a>
     </div>
-  </section>  <section id="about">
+  </section>
+
+  <section id="about">
     <h2>About CupCrunch</h2>
     <p>CupCrunch is an edible cup brand bringing eco-friendly, tasty, and sustainable alternatives to disposable cups. Every sip ends with a delightful crunch — good for you, and great for the planet.</p>
-  </section>  <section id="products">
+  </section>
+
+  <section id="products">
     <h2>Our Products</h2>
     <div class="products">
-      <div class="product">
-        <img src="images/IMG-20250611-WA0026.jpg" alt="Chocolate Cup">
-        <h3>Chocolate Cup</h3>
-        <p>Rich, crunchy chocolate cup for hot and cold drinks.</p>
-        <a href="https://www.flipkart.com/your-product-link" target="_blank" class="btn btn-flipkart">Buy on Flipkart</a>
-        <a href="https://www.amazon.in/your-product-link" target="_blank" class="btn btn-amazon">Buy on Amazon</a>
-      </div>
-      <div class="product">
-        <img src="images/IMG-20250611-WA0023.jpg" alt="Rose Cup">
-        <h3>Rose Cup</h3>
-        <p>Sweet rose-flavored edible cup — perfect for milkshakes.</p>
-        <a href="https://www.flipkart.com/your-product-link" target="_blank" class="btn btn-flipkart">Buy on Flipkart</a>
-        <a href="https://www.amazon.in/your-product-link" target="_blank" class="btn btn-amazon">Buy on Amazon</a>
-      </div>
       <div class="product">
         <img src="images/ms_zeju0_512_564454308.jpg" alt="Coffee Cup">
         <h3>Coffee Cup</h3>
@@ -171,16 +196,58 @@
         <a href="https://www.amazon.in/your-product-link" target="_blank" class="btn btn-amazon">Buy on Amazon</a>
       </div>
     </div>
-  </section>  <section id="mission">
+  </section>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="slider">
+      <div class="slides">
+        <img src="images/IMG-20250611-WA0026.jpg" alt="Chocolate Cup">
+        <img src="images/IMG-20250611-WA0023.jpg" alt="Rose Cup">
+        <img src="images/ms_zeju0_512_564454308.jpg" alt="Coffee Cup">
+        <img src="images/file_000000000c9861f5bb21a569c03a2add.png" alt="CupCrunch Event">
+        <img src="images/file_00000000130461f7818ba3dc0bb9a9dd (1).png" alt="Packaging">
+<img src="images/file_00000000915061f7b986288fe45dda8c.png" alt="Packaging">
+<img src="images/file_00000000ce5462308da957df7785eb22.png" alt="Packaging">
+<img src="images/file_00000000e23c61fdb8e04a014ea07300.png" alt="Packaging">
+<img src="images/file_00000000f7d861f7b03fb9a0d1dc4654.png" alt="Packaging">
+<img src="images/IMG_20250710_143625.png" alt="Packaging">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <section id="mission">
     <h2>Our Mission</h2>
     <p>At CupCrunch, we’re on a mission to eliminate single-use waste. Every cup we make is 100% biodegradable — because it’s edible!</p>
-  </section>  <section id="contact">
+  </section>
+
+  <section id="contact">
     <h2>Contact Us</h2>
     <p>📩 Email: bhanupartap9598@gmail.com</p>
     <p>📱 WhatsApp: +91-9256259598</p>
     <p>📷 Instagram: @official.cupcrunch2025</p>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>© 2025 CupCrunch | Powered by Shekhawat Group of Companies</p>
   </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides img').length;
+
+    document.querySelector('.next').addEventListener('click', () => {
+      slideIndex = (slideIndex + 1) % totalSlides;
+      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    });
+  </script>
 </body>
 </html>
