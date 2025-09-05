@@ -170,6 +170,37 @@
       margin: 0 8px;
       margin-top: 0;
     }
+.about-section {
+  background: #fbeee6;
+  padding: 48px 0 44px 0;
+  text-align: center;
+  border-radius: 32px;
+  box-shadow: 0 2px 16px #e9d1bf60;
+  margin: 36px auto 28px auto;
+  max-width: 950px;
+}
+.about-section h2 {
+  color: #6a4e42;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+.about-section p {
+  font-size: 1.14em;
+  color: #66524a;
+  margin: 0 auto;
+  max-width: 650px;
+  line-height: 1.7;
+}
+@media (max-width: 600px) {
+  .about-section {
+    padding: 22px 2vw 18px 2vw;
+    border-radius: 18px;
+  }
+  .about-section h2 { font-size: 1.3em; }
+  .about-section p { font-size: 1em; }
+}
     /* Why Choose CupCrunch */
     .why-cupcrunch {
       background: #f5e3d5;
@@ -333,10 +364,15 @@
       </div>
     </div>
   </section>
-<section id="about">
+<section class="about-section" id="about">
+  <div class="container">
     <h2>About CupCrunch</h2>
-    <p>CupCrunch is an edible cup brand bringing eco-friendly, tasty, and sustainable alternatives to disposable cups. Every sip ends with a delightful crunch — good for you, and great for the planet.</p>
-  </section>
+    <p>
+      CupCrunch is an edible cup brand bringing eco-friendly, tasty, and sustainable alternatives to disposable cups.<br>
+      Every sip ends with a delightful crunch — good for you, and great for the planet.
+    </p>
+  </div>
+</section>
 
   <!-- Why Choose CupCrunch / Brand Story -->
   <section class="why-cupcrunch" id="why">
